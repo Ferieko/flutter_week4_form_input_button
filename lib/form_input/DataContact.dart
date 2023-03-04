@@ -47,7 +47,21 @@ class DataContact extends StatelessWidget {
       appBar: AppBar(
         title: Text("Input Data"),
       ),
-      body: ListView.builder(
+      floatingActionButton: FloatingActionButton.large(
+        onPressed: () {
+      //onPressed: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) =>
+                          FormInput()));
+        },
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.blueAccent,
+      ),
+      floatingActionButtonLocation:    FloatingActionButtonLocation.endFloat,
+
+      body:
+      ListView.builder(
+
         itemBuilder: (context, index) {
           return Column(
             children: [
@@ -71,28 +85,28 @@ class DataContact extends StatelessWidget {
 
                 ),
               ),
-              const SizedBox(height: 20.0,),
-              Row(
-                children: [
-                  Expanded(
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context, MaterialPageRoute(builder: (context) =>
-                                FormInput()));
-                          }, child: const Text('+')
-                      ))
-                ],
-              )
+              // const SizedBox(height: 20.0,),
+              // Row(
+              //   children: [
+              //     Expanded(
+              //         child: ElevatedButton(
+              //             onPressed: () {
+              //               Navigator.push(
+              //                   context, MaterialPageRoute(builder: (context) =>
+              //                   FormInput()));
+              //             }, child: const Text('+')
+              //         ))
+              //   ],
+              // )
             ],
 
+            //const (FloatingActionButtonLocation miniEndFloat = _MiniEndFloatFabLocation();
           );
-          
+
         },
         //itemCount: userName.length,
         itemCount: userName.length,
       ),
-
 
 
     );
